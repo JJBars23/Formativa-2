@@ -1,0 +1,14 @@
+Resumen de los cambios realizados
+
+Se modifico el listado de Planes del panel de administracion de Django para mostrar el precio en formato de pesos chilenos. Por ejemplo, el valor 12990 se presenta como "$12.990".
+
+Detalles:
+- En Gimnasio/models.py se agrego la propiedad precio_formateado al modelo Plan. Esta propiedad agrega el signo "$" y utiliza puntos como separadores de miles.
+- En Gimnasio/admin.py se cambio la columna de precio del listado para mostrar precio_formateado. La columna conserva la ordenacion numerica usando el campo precio.
+- En Gimnasio/tests.py se agrego una prueba automatizada que comprueba que 12990 se muestre como "$12.990".
+
+Validacion:
+- Se ejecuto "manage.py test Gimnasio".
+- El resultado fue satisfactorio: paso 1 prueba y la verificacion de Django no encontro problemas.
+
+El cambio de formato solo afecta la presentacion del precio en el listado; no cambia el valor guardado en la base de datos.
